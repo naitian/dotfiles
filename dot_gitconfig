@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Naitian Zhou
+	email = naitian@naitian.org
+[core]
+	excludesfile = /Users/naitian/.gitignore_global
+[pull]
+	rebase = false

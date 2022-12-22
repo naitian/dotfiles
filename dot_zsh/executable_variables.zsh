@@ -3,6 +3,7 @@ export SYSADMINS="$HOME/Documents/School/CS/Sysadmin"
 export LABS="$HOME/Documents/School/EECS281"
 export SCHOOL="$HOME/Documents/School"
 export ART="$HOME/Documents/Art"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 export SMALL_WIDTH=60
 

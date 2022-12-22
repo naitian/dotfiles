@@ -52,13 +52,14 @@ source ~/.zsh/git.zsh
 setopt PROMPT_SUBST
 
 __responsive_rprompt () {
+    current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null | echo "")
     if [[ ${COLUMNS} -gt $SMALL_WIDTH ]]
     then
         prompt="%8F%1~%10F%B$(__git_ps1)%b"
     else
-        if [[ "$(current_branch)" != "" ]]
+        if [[ "$current_branch" != "" ]]
         then
-            prompt="%8F%1~ %B$(current_branch)%b"
+            prompt="%8F%1~ %B$current_branch%b"
         else
             prompt='%8F%1~'
         fi

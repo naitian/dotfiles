@@ -59,6 +59,13 @@ tj () {
     ssh tj
 }
 
+vonda () {
+  mamba create -n $1
+  echo "conda activate $1" > .envrc
+  echo 'unset PS1' >> .envrc
+  direnv allow
+}
+
 venv () {
     python3 -m venv env
     echo 'source $(dirname "${BASH_SOURCE[0]}")/env/bin/activate' > .envrc

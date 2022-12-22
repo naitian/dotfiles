@@ -21,7 +21,7 @@ local on_attach = function(_, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local servers = { "pyright", "tsserver", "texlab", "html", "cssls", "svelte" }
 for _, lsp in ipairs(servers) do
@@ -36,20 +36,20 @@ for _, lsp in ipairs(servers) do
 end
 
 -- EFM config
-local efmls = require("efmls-configs")
-local black = require("efmls-configs.formatters.black")
-efmls.init({
-	-- Your custom attach function
-	on_attach = on_attach,
-	default_config = true,
-	-- Enable formatting provided by efm langserver
-	init_options = {
-		documentFormatting = true,
-	},
-})
-
-efmls.setup({
-	python = {
-		formatter = black,
-	},
-})
+-- local efmls = require("efmls-configs")
+-- local black = require("efmls-configs.formatters.black")
+-- efmls.init({
+-- 	-- Your custom attach function
+-- 	on_attach = on_attach,
+-- 	default_config = true,
+-- 	-- Enable formatting provided by efm langserver
+-- 	init_options = {
+-- 		documentFormatting = true,
+-- 	},
+-- })
+-- 
+-- efmls.setup({
+-- 	python = {
+-- 		formatter = black,
+-- 	},
+-- })
